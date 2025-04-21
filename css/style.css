@@ -1,0 +1,94 @@
+.item {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--background);
+}
+
+.item.active {
+    display: block;
+}
+
+.item .title {
+    font-size:10rem;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: bold;
+    text-align: center; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.item .fruit {
+    max-width: 90%;
+    max-height: 90%;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+
+.item .refri {
+    width:900px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    opacity: 0.8; 
+}
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #eee9;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size: x-large;
+    font-family: monospace;
+    z-index: 40;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    #prev:hover, #next:hover {
+        background-color: #eee;
+        color: #333;
+    }
+
+    #prev {
+        left: 30px;
+    }
+    #next {
+        right: 30px;
+    }
+
+    @keyframes toActive {
+        from {
+            top: 100%;
+            opacity: 0;
+        }
+
+    }
+    .item.active img.refri{
+        animation: toActive 1s ease-in-out 1;
+    }
+    .item.active .title {
+        animation: toActive 1s ease-in-out 1;
+    }
